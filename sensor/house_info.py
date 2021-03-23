@@ -17,8 +17,7 @@ class HouseInfo:
 
     def get_data_by_date(self, field, rec_date=date.today()):
         field_data = []
-        for record in self.data:
-            test_date = record['date']
-            if datetime.strptime(test_date, '%m/%d/%y') == rec_date:
+        for record in self.data:            
+            if record['date'].strptime('%m/%d/%y') == rec_date:
                 field_data.append(record[field])
         return field_data
